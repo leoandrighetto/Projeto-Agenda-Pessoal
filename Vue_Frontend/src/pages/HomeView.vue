@@ -1,7 +1,12 @@
 <template>
-    <div>
-        TESTE
-    </div>
+    <v-container>
+        <v-col>
+            <v-row>
+                TESTE
+            </v-row>
+        </v-col>
+
+    </v-container>
 </template>
 
 <script setup>
