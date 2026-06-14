@@ -16,7 +16,7 @@ const jwlStore = defineStore("jwt-store", {
       this.jwt = newJwt;
     },
   },
-  
+
   killJwt() {
     this.jwt = null;
   },

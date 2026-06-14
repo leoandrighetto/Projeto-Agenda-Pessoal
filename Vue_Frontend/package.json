@@ -9,6 +9,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource/inter": "^5.2.8",
+    "@fontsource/libre-franklin": "^5.2.8",
+    "@fontsource/manrope": "^5.2.8",
     "@mdi/font": "^7.4.47",
     "pinia": "^3.0.4",
     "vue": "^3.5.34",

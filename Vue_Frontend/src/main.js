@@ -1,6 +1,8 @@
 import { createApp } from "vue";
 import "./style.css";
 import '@mdi/font/css/materialdesignicons.css'
+import '@fontsource/inter'
+import '@fontsource/libre-franklin'
 
 import App from "./App.vue";
 //Router

@@ -1,0 +1,29 @@
+.geral-card{
+    height: 30em;
+    width: 30em;
+
+}
+
+.geral-card-title{
+    margin-top: 30px;
+    font-size: 26px;
+    font-family: 'Libre Franklin', sistem-ui;
+    font-weight: 800;
+}
+
+.geral-card-content{
+    margin-top: 3em;
+}
+
+.geral-input{
+    width: 24.7em;
+}
+
+.register-button{
+    margin-top: 1.4em;
+    width: 13em;
+    color: white;
+    font-family: "Libre Franklin";
+    font-size: 15pt;
+}
+

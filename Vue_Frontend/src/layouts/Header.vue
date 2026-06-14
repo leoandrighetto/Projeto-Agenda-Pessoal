@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <v-app-bar color="blue" density="compact" :elevation="0">
+    <v-app-bar color="primary" density="compact" :elevation="0">
         <template #prepend>
             <v-app-bar-nav-icon @click="$emit('drawer')" />
         </template>
