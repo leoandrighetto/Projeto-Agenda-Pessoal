@@ -11,12 +11,16 @@ env/
 # Environment variables
 .env
 
-# Flask
-instance/
+# FastAPI / Python cache
 .pytest_cache/
 
-# Migrations (opcional)
-# migrations/
+# Tests
+tests/
+
+
+# Tests cache
+.coverage
+htmlcov/
 
 # IDEs
 .vscode/
@@ -35,13 +39,6 @@ node_modules/
 # Vue
 dist/
 
-# Coverage
-.coverage
-htmlcov/
-
-# Testing
-.pytest_cache/
-
-# SQLite
+# SQLite (se usar localmente)
 *.db
 *.sqlite3
