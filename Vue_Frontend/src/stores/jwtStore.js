@@ -2,11 +2,13 @@ import { defineStore } from "pinia";
 
 const jwlStore = defineStore("jwt-store", {
   state: () => ({
-    jwtToken: "teste",
+    jwtToken: null,
   }),
 
-  getters: () => {
-    hasToken: (state) => !!state.jwtToken;
+  getters: {
+    hasToken: (state) => {
+      return !!state.jwtToken?.trim();
+    }
   },
 
   actions: {
@@ -14,6 +16,7 @@ const jwlStore = defineStore("jwt-store", {
       this.jwt = newJwt;
     },
   },
+  
   killJwt() {
     this.jwt = null;
   },

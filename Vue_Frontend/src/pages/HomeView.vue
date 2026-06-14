@@ -2,7 +2,7 @@
     <v-container>
         <v-col>
             <v-row>
-                TESTE
+                DASHBOARD de usuário autenticado.
             </v-row>
         </v-col>
 
