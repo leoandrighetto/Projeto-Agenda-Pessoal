@@ -1,29 +1,15 @@
-from .base import Base
-from sqlalchemy import String, Text, DateTime, func
-from sqlalchemy.orm import Mapped, mapped_column
 from datetime import datetime
+from sqlmodel import Field, SQLModel, Column
+from sqlalchemy import Text, func
 
 
-class User(Base):
-
-    __tablename__ = "user_account"
-
-    id: Mapped[int] = mapped_column(primary_key=True)
-    username: Mapped[str] = mapped_column(String(15), nullable=False, unique=True)
-    fullname: Mapped[str] = mapped_column(String(50), nullable=False)
-    email: Mapped[str] = mapped_column(String(50), nullable=False, unique=True)
-    password: Mapped[str] = mapped_column(Text, nullable=False)
-
-    created_at: Mapped[datetime] = mapped_column(
-        DateTime(timezone=True), server_default=func.now(), nullable=False
+class User(SQLModel, table=True):
+    id: int | None = Field(default=None, primary_key=True)
+    username: str = Field(max_length=15, unique=True)
+    fullname: str = Field(max_length=60)
+    email: str = Field(max_length=100, unique=True)
+    password: str = Field(sa_column=Column(Text, nullable=False))
+    created_at: datetime = Field(sa_column_kwargs={"server_default": func.now()})
+    updated_at: datetime = Field(
+        sa_column_kwargs={"server_default": func.now(), "onupdate": func.now()}
     )
-
-    updated_at: Mapped[datetime] = mapped_column(
-        DateTime(timezone=True),
-        server_default=func.now(),
-        server_onupdate=func.now(),
-        nullable=False,
-    )
-
-    def __repr__(self) -> str:
-        return f"User(id={self.id!r}, username={self.username!r})"
