@@ -4,7 +4,9 @@ from contextlib import asynccontextmanager
 from database import engine, get_session
 from sqlmodel import SQLModel
 
-# from models.model import model
+from models.user import User
+
+from routes.auth import router as auth_router
 
 
 @asynccontextmanager
@@ -16,8 +18,10 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(lifespan=lifespan)
 
+app.include_router(auth_router)
+
 origins = [
-    "http://localhost:5173/",
+    "http://localhost:5173",
 ]
 
 app.add_middleware(

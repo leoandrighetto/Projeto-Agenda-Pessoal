@@ -1,5 +1,5 @@
 from sqlmodel import Session, select
-from ..models.user import User
+from models.user import User
 from .password_manager import PasswordManager
 
 
